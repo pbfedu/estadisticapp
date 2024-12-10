@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Has arribat al límit - Estadísticapp by WorkSphere</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="licenserequiredstyle.css">
+
+</head>
+<body>
+  <div class="container">
+    <!-- Introducción -->
+    <header>
+      <h1>Has arribat al límit</h1>
+      <p class="descripcion-teoria">
+        Per continuar, tens dues opcions: <strong>introduir un codi de llicència</strong> o utilitzar un <strong>correu electrònic educatiu</strong>. 
+        És important mantenir el finançament d’aquesta plataforma per garantir la qualitat dels continguts.
+      </p>
+    </header>
+
+    <!-- Explicación detallada -->
+    <div class="descripcion-teoria">
+      <h3>Opcions per continuar</h3>
+      <ul>
+        <li><strong>Codi de llicència:</strong> Pots adquirir un codi a través de la nostra plataforma. Això et permet desbloquejar el 100% del contingut i accedir a totes les funcionalitats. Si tens un usuari de WorkSphere for Education, pots utilitzar el teu codi personal per accedir.</li>
+        <li>
+          <strong>Correu electrònic educatiu:</strong> Si utilitzes un correu acabat en <em>@xtec.cat</em>, <em>@edu.gva.es</em> o d’un domini d’educació (<em>.edu</em>), podràs desbloquejar parcialment el contingut i continuar una mica més.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Zona de selección -->
+    <div class="zona-interactiva">
+      <!-- Introducir código de licencia -->
+      <div class="personas">
+        <h3>Opció 1: Codi de llicència</h3>
+        <p>Introdueix el codi que has comprat per desbloquejar tot el contingut:</p>
+        <input type="text" id="license" placeholder="Codi de llicència o Codi Personal">
+        <button class="botonPrincipal" id="validate-license">Validar Codi</button>
+      </div>
+
+      <!-- Introducir correo educativo -->
+      <div class="muestra">
+        <h3>Opció 2: Correu electrònic educatiu</h3>
+        <p>Introdueix el teu correu educatiu per continuar:</p>
+        <input type="email" id="email" placeholder="El teu correu educatiu">
+        <button class="botonPrincipal" id="validate-email">Validar Correu</button>
+      </div>
+    </div>
+
+    <!-- Mensaje de error -->
+    <p id="error-message" class="descripcion-teoria oculto">
+      ❌ <strong>Error:</strong> El codi introduït no és vàlid, o el correu no pertany a un domini educatiu autoritzat.
+    </p>
+  </div>
+
+  <script src="licenserequiredscript.js"></script>
+</body>
+</html>
