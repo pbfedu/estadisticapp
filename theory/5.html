@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animals a Casa - Estadísticapp</title>
+  <link rel="stylesheet" href="5style.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="descripcion-teoria">
+        <h2>Cas Pràctic: Els Animals a Casa</h2>
+        <p>Quants animals tenen les persones a casa seva? Entrevista els participants i completa la taula de freqüències</p>
+      </div>
+
+      <div class="zona-interactiva">
+        <div class="personas">
+          <!-- Aquí se generarán los íconos de personas -->
+        </div>
+        <table class="tabla-frecuencias">
+          <thead>
+            <tr>
+              <th>Animals (x)</th>
+              <th>Freqüència Absoluta (n)</th>
+              <th>Freqüència Relativa (f)</th>
+              <th>Percentatge (p)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filas dinámicas -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td id="total-absoluta">0</td>
+              <td id="total-relativa">-</td>
+              <td id="total-porcentaje">-</td>
+            </tr>
+          </tfoot>
+        </table>
+        <h1> ‎ </h1>
+        <button class="botonPrincipal" onclick="mostrarInfo()">Més Info</button>
+        <div id="informacionExpandida" class="informacion-extendida oculto">
+          <h4>Més informació sobre les Taules de Freqüències i la Freqüència Absolta / Relativa</h4>
+          <p>
+              Una taula de freqüències és una manera organitzada de mostrar com es distribueixen els valors d'un conjunt de dades. És una eina fonamental per analitzar i resumir la informació en un estudi estadístic. Aquestes taules ens permeten veure de manera clara i ordenada la quantitat de vegades que apareix cada valor o categoria en un conjunt de dades.</p>
+          <p>
+              La <b>freqüència absoluta</b> és el nombre de vegades que un valor o categoria apareix en el conjunt de dades. Per exemple, si en un estudi sobre les preferències de colors, el color blau apareix 10 vegades en les respostes, la freqüència absoluta per al color blau seria 10.</p>
+        <p>
+          La <b>freqüència relativa</b> expressa la proporció de vegades que un valor apareix en relació al total de les observacions. Es calcula dividint la freqüència absoluta de cada categoria pel nombre total d'observacions i es multiplica per 100 per obtenir el percentatge.</p>
+          <p>
+              Ara que ja has après la diferència entre la població i la mostra, has dissenyat una mostra proporcional i domines les variables és hora de passar a l'acció. Entrevista a tots els personatges i completa els forats pendents, si tens dubtes torna a l'activitat anterior.</p>
+      </div>
+      </div>
+    </div>
+  </main>
+  <script src="5script.js"></script>
+</body>
+</html>
