@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="2style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Estudi Estadístic - Estadísticapp</title>
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <!-- Descripción y Teoría -->
+      <div class="descripcion-teoria">
+        <h2>Estudi Estadístic: Selecció d'una Bona Mostra</h2>
+        <p>
+            La selecció d'una bona mostra és crucial a l'estadística. Necessitem una mostra representativa, que és aquella que reflecteix fidelment les característiques de la població total que volem estudiar. Si la mostra no és adequada, els resultats d'un estudi no són fiables.        </p>
+        
+        <p><strong>Recorda:</strong> Com més equilibrada i diversa sigui la mostra, més fiable serà l'anàlisi i els resultats obtinguts.</p>
+        
+        <!-- Expandir Información -->
+        <button class="expandir" onclick="mostrarInfo()">Més Info</button>
+        <div id="informacionExpandida" class="informacion-extendida oculto">
+          <h4>Més informació sobre la importància d'una Mostra Representativa</h4>
+          <p>
+            La clau d'un bon estudi estadístic és triar una mostra que sigui prou representativa de la població que vols estudiar. Per exemple, si volem estudiar els hàbits alimentaris a una ciutat, i només triem persones d'un barri amb un nivell socioeconòmic alt, els resultats no reflectiran els costums de totes les persones de la ciutat. Per això, la diversitat a la mostra és crucial.
+          </p>
+          <p>
+            A més, per a  seleccionar una mostra, cal tenir en compte altres factors com l'edat, la ubicació, l'estat civil i l'ocupació, depenent de l'objectiu de l'estudi. La mostra ha de ser prou gran per tenir una bona precisió, però no tan gran que sigui poc pràctica.</p>
+        <p>
+            Ara dissenya un estudi estadístic i selecciona persones perquè entrin dins de la teva mostra, recorda que tinguin gèneres variats, nivells econòmics variats i nacionalitats diferents. Per superar aquesta secció hauràs de tenir una mostra de qualitat<strong> 75% o superior</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Zona Interactiva para el Estudio -->
+      <div class="zona-interactiva">
+        <div id="personas" class="personas">
+          <!-- Personas generadas dinámicamente -->
+        </div>
+        <div id="muestra" class="muestra">
+          <h3>Mostra</h3>
+          <div class="muestra-personas"></div>
+          <p id="calidadMuestra">Qualitat de la mostra: 0%</p>
+          <button id="botonSiguiente" class="botonPrincipal oculto" onclick="location.href='3.html'">Següent</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2024 WorkSphere
+  </footer>
+
+  <script src="2script.js"></script>
+</body>
+</html>
