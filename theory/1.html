@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Població i Mostra - Estadísticapp</title>
+  <link rel="stylesheet" href="1style.css">
+</head>
+<body>
+
+  <main>
+    <h2>Població i Mostra</h2>
+    <div class="contenedor">
+      <!-- Sección dinámica de explicaciones -->
+      <div id="explicacion" class="explicacion">
+        <p id="textoExplicacion">
+          La <strong>Població</strong> és el conjunt total d'elements que volem estudiar. 
+          Per exemple, tots els estudiants d'una escola.
+        </p>
+        <button id="expandir" class="botonExpandir">Més Info</button>
+      </div>
+      <!-- Botón de cambio de vista -->
+      <button id="cambiarVista" class="botonPrincipal">Mostra</button>
+      <!-- Contenedor de los puntos -->
+      <div id="animacion" class="animacion">
+        <!-- Círculos generados dinámicamente -->
+      </div>
+
+      <!-- Botón de "Siguiente" que lleva a 2.html -->
+      <button id="botonPrincipal" class="botonPrincipal oculto" onclick="location.href='2.html'">Següent</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>©2024 WorkSphere</p>
+  </footer>
+
+  <script src="1script.js"></script>
+</body>
+</html>
