@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipus de Gràfics - Estadísticapp</title>
+  <link rel="stylesheet" href="8style.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Tipus de Gràfics</h1>
+    <p>Repasem els tres tipus de gràfics: <strong>Gràfic de Barres</strong>, <strong>Histograma</strong> i <strong>Gràfic de Sectors</strong>.</p>
+
+    <!-- Gràfic de Barres -->
+    <section class="card">
+      <h2>Gràfic de Barres</h2>
+      <table id="bar-chart-table">
+        <thead>
+          <tr>
+            <th>X</th>
+            <th>Freqüència Absoluta (n)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <canvas id="barChart"></canvas>
+      <p>El <strong>Gràfic de Barres</strong> s'utilitza per comparar valors entre diferents categories. Cada barra representa una categoria, i la seva altura indica la freqüència o el valor associat.</p>
+    </section>
+
+    <!-- Histograma -->
+    <section class="card">
+      <h2>Histograma</h2>
+      <table id="histogram-table">
+        <thead>
+          <tr>
+            <th>Interval</th>
+            <th>Freqüència Absoluta (n)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <canvas id="histogramChart"></canvas>
+      <p>Un <strong>Histograma</strong> mostra la distribució de dades en intervals. És ideal per visualitzar com es reparteixen les dades en un rang determinat, especialment per analitzar freqüències.</p>
+    </section>
+
+    <!-- Gràfic de Sectors -->
+    <section class="card">
+      <h2>Gràfic de Sectors</h2>
+      <table id="pie-chart-table">
+        <thead>
+          <tr>
+            <th>X</th>
+            <th>Percentatge (p)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <canvas id="pieChart"></canvas>
+      <p>El <strong>Gràfic de Sectors</strong>, o "pastís", representa dades en forma de porcions d'un cercle. És ideal per mostrar proporcions i comparar parts d'un total.</p>
+    </section>
+  </main>
+  <script src="8script.js"></script>
+</body>
+</html>
