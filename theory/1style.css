@@ -1,0 +1,222 @@
+/* General */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fffbe7;
+  color: #333;
+  margin: 0;
+}
+
+header {
+  background: #ffcad4;
+  padding: 10px 20px;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  background: #ff85a1;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+header nav ul li a:hover {
+  background: #ff5773;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #444;
+}
+
+.contenedor {
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.explicacion {
+  margin-bottom: 20px;
+  background: #fdf1d6;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.botonPrincipal {
+  background: #ff85a1;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botonPrincipal:hover {
+  background: #ff5773;
+}
+
+.botonExpandir {
+  display: inline-block;
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  color: #007bff;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.botonExpandir:hover {
+  color: #0056b3;
+}
+
+.animacion {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  background: #ffebf0;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.circulo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: background 0.5s, transform 0.3s;
+}
+
+.circulo.poblacion {
+  background: #85dcb1;
+}
+
+.circulo.muestra {
+  background: #ffc107;
+  transform: scale(1.2);
+}
+
+.circulo.descartado {
+  background: #d6d6d6;
+}
+/* Extiende el general */
+@import url('general.css');
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #444;
+}
+
+.contenedor {
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.explicacion {
+  margin-bottom: 20px;
+  background: #fdf1d6;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.explicacion.oculto {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.botonPrincipal {
+  background: #ff85a1;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.botonPrincipal:hover {
+  background: #ff5773;
+}
+
+.botonExpandir {
+  display: inline-block;
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  color: #007bff;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.botonExpandir:hover {
+  color: #0056b3;
+}
+
+.animacion {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  background: #ffebf0;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.circulo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: background 0.5s, transform 0.3s;
+}
+
+.circulo.poblacion {
+  background: #85dcb1;
+}
+
+.circulo.muestra {
+  background: #ffc107;
+  transform: scale(1.2);
+}
+
+.circulo.descartado {
+  background: #d6d6d6;
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    color: #333;
+    font-size: 0.9rem;
+    margin-top: auto; /* Asegura que el footer quede al fondo */
+  }
+  
