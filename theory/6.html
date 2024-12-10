@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intervals - Estadísticapp</title>
+  <link rel="stylesheet" href="6style.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="descripcion-teoria">
+        <h1> ‎ </h1>
+        <h1> ‎ </h1>
+        <h1> ‎ </h1>
+        <h1> ‎ </h1>
+        <h1> ‎ </h1>
+        <h1> ‎ </h1>
+        <h2>Els Intervals</h2>
+        <p>Utilitzem els intervals per a agrupar valors i facilitar-nos fer la taula de valors. Podem tenir intervals dels nombres que vulguem, de 2 valors, de 3 de 4... Amb aquests botons pots triar de quants nombres vols fer els intervals per a aquests nombres</p>      </div>
+
+      <div class="zona-interactiva">
+        <div class="selector-container">
+            <label>Selecciona l'amplada de l'interval:</label>
+            <div class="botones">
+                <h4> ‎ </h4>
+              <button class="botonPrincipal" id="btn-1">1</button>
+              <button class="botonPrincipal" id="btn-2">2</button>
+              <button class="botonPrincipal" id="btn-5">5</button>
+              <h4> ‎ </h4>
+            </div>
+          </div>
+          
+
+        <!-- Números generats -->
+        <div class="personas">
+          <!-- Aquí es generen els valors aleatoris -->
+        </div>
+
+        <!-- Taula de freqüències -->
+        <table class="tabla-frecuencias">
+          <thead>
+            <tr>
+              <th>Interval</th>
+              <th>Freqüència Absoluta (n)</th>
+              <th>Freqüència Relativa (f)</th>
+              <th>Percentatge (p)</th>
+            </tr>
+            <p id="mensaje-error" style="display: none; color: red;">No s'ha pogut generar aquest interval, prova amb un altre valor.</p>
+          </thead>
+          <tbody>
+            <!-- Files dinàmiques -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td id="total-absoluta">0</td>
+              <td id="total-relativa">-</td>
+              <td id="total-porcentaje">-</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <h1> ‎ </h1>
+        <button class="botonPrincipal" onclick="mostrarInfo()">Més Info</button>
+        <div id="informacionExpandida" class="informacion-extendida oculto">
+          <h4>Més informació sobre els Intervals</h4>
+          <p>
+            Els intervals ens han de servir per a poder agrupar de valors de manera senzilla. Hem de tenir en compte unes regles molt senzilles, si tenim [ o ] vol dir que el valor s'inclou, per exemple [7, vol dir que el 7 s'inclou. En canvi ( o ) vol dir que s'exclou, per exemple (7, vol dir que el 7 no s'inclou.</p>
+          <p>
+            Si vull fer un interval que va del 2 al 4,999... (és a dir tots els valors abans del 5), hauria de fer [2,5). Incloc el 2 però no el 5.</p>
+        <p>
+            Amb aquests botons pots anar variant la quantitat de nombres que inclourà l'interval, ja que si, tots els intervals a una mateixa taula de freqüències han de ser del mateix nombre de nombres. No pots tenir un interval de 3 valors [1,4), un de 2 valors [4,7) i un d'1 valor [7,8].</p>
+         
+        </div>
+      <button id="botonSiguiente" class="botonPrincipal oculto" onclick="location.href='7.html'">Següent</button>
+    </div>
+  </main>
+  <script src="6script.js"></script>
+</body>
+</html>
