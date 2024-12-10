@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="3style.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Variables Estadístiques - Estadísticapp</title>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <!-- Introducción -->
+      <div class="descripcion-teoria">
+        <h2>Explorant les Variables Estadístiques</h2>
+        <p>A l'estadística tenim diferents tipus de variables: Quantitativa Contínua, Quantitativa Discreta i Qualitativa. Mira els exemples</p>
+      </div>
+
+      <!-- Ejemplos de Variables -->
+      <section id="variables">
+        <!-- Cuantitativa Continua -->
+        <div class="ejemplo">
+          <h3>Variable Quantitativa Contínua</h3>
+          <div class="animacion-continua" id="continua">
+            <!-- Ejemplos dinámicos generados por JavaScript -->
+          </div>
+        </div>
+
+        <!-- Cuantitativa Discreta -->
+        <div class="ejemplo">
+          <h3>Variable Quantitativa Discreta</h3>
+          <div class="animacion-discreta" id="discreta">
+            <!-- Ejemplos dinámicos generados por JavaScript -->
+          </div>
+        </div>
+
+        <!-- Variable Cualitativa -->
+        <div class="ejemplo">
+          <h3>Variable Qualitativa</h3>
+          <div class="animacion-cualitativa" id="cualitativa">
+            <!-- Ejemplos dinámicos generados por JavaScript -->
+          </div>
+        </div>
+      </section>
+    </div>
+    <button class="botonPrincipal" onclick="mostrarInfo()">Més Info</button>
+    <div id="informacionExpandida" class="informacion-extendida oculto">
+      <h4>Més informació sobre les Variables</h4>
+      <p>
+        Quan fem un estudi estadístic, és important saber quines variables volem mesurar. Hi ha tres tipus principals de variables:
+      </p>
+      <ul>
+        <li><strong>Variables Quantitatives Discretes:</strong> Són aquelles que podem comptar i que tenen valors específics. Per exemple, el nombre de persones en una família o el nombre d'animals d'una granja. Aquestes variables no poden tenir valors decimals.</li>
+        <li><strong>Variables Quantitatives Contínues:</strong> Són aquelles que poden tenir qualsevol valor dins d'un rang. Per exemple, l'altura o el pes d'una persona, que poden ser valors decimals com 1,75 metres o 70,5 kg. Aquestes variables poden ser mesurades amb molta precisió.</li>
+        <li><strong>Variables Qualitatives:</strong> Són variables que no es poden mesurar numèricament, sinó que descriuen qualitats o característiques. Per exemple, el color d'ulls (blau, verd, marró) o el tipus de treball que fa una persona (metge, professor, enginyer). Aquestes variables es classifiquen en categories.</li>
+    </ul>
+    </div>
+    <button id="next" class="botonPrincipal" onclick="window.location.href='../license-required.html';">Següent</button>
+  </div>
+  </main>
+
+  <footer>
+    © 2024 WorkSphere
+  </footer>
+
+  <script src="3script.js"></script>
+</body>
+</html>
