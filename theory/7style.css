@@ -1,0 +1,95 @@
+:root {
+    --highlight-color: #a3f7bf; /* Cyan verdoso claro */
+    --processing-color: #7bdfff; /* Azul claro para números en proceso */
+    --final-result-color: #ffb3b3; /* Rosado claro para el resultado final */
+  }
+  
+  .card .numbers div.final {
+    background-color: var(--final-result-color);
+    transform: scale(1.3);
+    transition: all 0.5s ease;
+  }
+  
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f9ff; /* Fondo más suave */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h2 {
+    color: #333;
+  }
+  
+  .card .numbers {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .card .numbers div {
+    padding: 10px 15px;
+    background-color: #0074d9;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: all 0.5s ease;
+  }
+  
+  .card .numbers div.processing {
+    background-color: var(--processing-color);
+  }
+  
+  .card .numbers div.reordered {
+    background-color: #ff851b;
+    transform: scale(1.2);
+  }
+  
+  .card .results p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .card .results p.visible {
+    opacity: 1;
+    background-color: var(--highlight-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto;
+    width: fit-content;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .btn:hover {
+    background-color: #005bb5;
+  }
+  
