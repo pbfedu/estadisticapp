@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inici de Sessió - WorkSphere+</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fffbe7;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        header {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-container p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .input-group input:focus {
+            border-color: #ff5773;
+            outline: none;
+        }
+
+        .login-btn {
+            background-color: #ff85a1;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .login-btn:hover {
+            background-color: #ff5773;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #ff5773;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #ff5773;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="login-container">
+            <h1>Inici de Sessió</h1>
+            <p>Per a gestionar les teves suscripcions de pagament inicia sessió al teu compte WorkSphere Pro.</p>
+            <form action="#" method="post" id="loginForm">
+                <!-- Correu Electrònic -->
+                <div class="input-group">
+                    <label for="email">Correu Electrònic</label>
+                    <input type="email" id="email" name="email" placeholder="nomcognom@worksphere.com" required>
+                </div>
+
+                <!-- Contrasenya -->
+                <div class="input-group">
+                    <label for="password">Contrasenya</label>
+                    <input type="password" id="password" name="password" placeholder="Contrasenya" required>
+                </div>
+
+                <!-- Error al intentar iniciar sessió -->
+                <div class="error-message" id="loginError"></div>
+
+                <!-- Botó de Inici de Sessió -->
+                <button type="submit" class="login-btn">Inicia Sessió</button>
+            </form>
+
+            <div class="footer">
+                <p>Encara no tens un compte?<a href="pricing.html"> Subscriu-te a WorkSphere Pro</a></p>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Evitar que el formulari es pugui enviar
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Simulant la validació de correu i contrasenya incorrectes
+            if (email !== "exemple@worksphere.com" || password !== "123456") {
+                document.getElementById("loginError").textContent = "El correu o la contrasenya són incorrectes.";
+            } else {
+                document.getElementById("loginError").textContent = "";
+                // Aquí, normalment, aniries a una pàgina d'èxit o a una nova sessió
+                alert("Inici de sessió exitós!");
+            }
+        });
+    </script>
+</body>
+</html>

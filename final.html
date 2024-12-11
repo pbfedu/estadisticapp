@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felicitats! - Estadísticapp</title>
+  <link rel="stylesheet" href="final.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Para iconos de redes sociales -->
+</head>
+<body>
+  <main class="final-container">
+    <div class="content">
+      <h1>Felicitats! Has acabat el repas amb Estadísticapp</h1>
+      <p>Has completat l'aprenentatge sobre <strong>Estadística per a nivell 3r i 4t d'ESO</strong>!</p>
+      <p>Genial! Ara ja saps des de diferenciar la població i la mostra, fer estudis estadístics, ordenar-ho en variables, fer taules de freqüències, fer mitjanes, medianes i modes i representar-ho amb gràfics.</p>
+      <p>Comparteix els teus èxits i aquesta pàgina amb els teus amics!</p>
+
+      <!-- Botones de redes sociales -->
+      <div class="social-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://pbfedu.github.io/estadisticapp" target="_blank" class="social-button facebook">
+          <i class="fab fa-facebook-f"></i> Comparteix a Facebook
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https://pbfedu.github.io/estadisticapp&text=Mira el que he aprés!" target="_blank" class="social-button twitter">
+          <i class="fab fa-twitter"></i> Comparteix a Twitter
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://pbfedu.github.io/estadisticapp&title=He acabat el curs!" target="_blank" class="social-button linkedin">
+          <i class="fab fa-linkedin-in"></i> Comparteix a LinkedIn
+        </a>
+      </div>
+
+      <!-- Botón de "Descarregar justificant" -->
+      <button class="finish-button" onclick="downloadJustificant()">Descarregar Resum</button>
+      
+      <!-- Botón de "He Acabat" -->
+      <button class="finish-button" onclick="finishCourse()">He acabat!</button>
+    </div>
+  </main>
+
+  <!-- Modal para el Justificant -->
+  <div id="justificant-modal" class="modal">
+    <div class="modal-content">
+      <h2>Descarrega el teu Resum Educatiu</h2>
+      <p>Introdueix el teu nom i cognoms per a generar el Resum. Aquesta opció només és disponible per a estudiants. <b>Obrir o editar el document el poden invalidar i fer que no funcioni correctament.</b></p>
+      <input type="text" id="user-name" placeholder="Nom i Cognoms">
+      <button onclick="generateJustificant()">Generar Resum</button>
+      <button onclick="closeModal()">Tancar</button>
+    </div>
+  </div>
+
+  <script>
+    // Mostrar modal de justificant
+    function downloadJustificant() {
+      document.getElementById('justificant-modal').style.display = 'block';
+    }
+
+    // Cerrar el modal
+    function closeModal() {
+      document.getElementById('justificant-modal').style.display = 'none';
+    }
+
+    // Generar el justificant
+    function generateJustificant() {
+      const name = document.getElementById('user-name').value;
+      if (name.trim() === '') {
+        alert('Si us plau, introdueix el teu nom i cognoms.');
+        return;
+      }
+
+      // Obtener IP mediante una API pública (ipify)
+      fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+          const userIP = data.ip; // IP obtenida
+
+          // Obtener fecha y hora
+          const now = new Date();
+          const dateTime = now.toLocaleString();
+
+          // Crear el objeto con la información
+          const userData = {
+            name: name,
+            ip: userIP,
+            dateTime: dateTime,
+          };
+
+          // Encriptar la información
+          const encryptedData = btoa(JSON.stringify(userData)); // Encriptado en base64
+
+          // Crear archivo de texto
+          const blob = new Blob([encryptedData], { type: 'text/plain' });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = 'resum.txt';
+          link.click();
+
+          // Cerrar el modal después de descargar
+          closeModal();
+        })
+        .catch(error => {
+          alert('No es va poder obtenir la teva IP. Intenta-ho més tard.');
+        });
+    }
+
+    // Función para finalizar el curso
+    function finishCourse() {
+      alert("Felicitats! Has completat el curs. Redirigint");
+      window.location.href = "index.html"; // Redirigir a la página de inicio o a otro destino.
+    }
+  </script>
+
+  <style>
+    /* Modal de justificant */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ff85a1;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff85a1;
+    }
+  </style>
+</body>
+</html>

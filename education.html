@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Per a Docents - Estadísticapp</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+        .randomness {
+            text-align: center;
+        }
+        #barChart {
+            max-width: 700px;
+            margin: 20px auto;
+        }
+        .summary-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .summary-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="about.html">Sobre Estadísticapp</a></li>
+                <li><a href="#">Per a Docents</a></li>
+                <li><a href="pricing.html">Preus</a></li>
+                <li><a href="log-in.html">WorkSphere Pro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about">
+        <section class="container">
+            <h1>Estadísticapp per a Docents</h1>
+            <p>Estadísticapp ofereix una eina poderosa per a docents que vulguin oferir una activitat diferent per a aprendre estadística. A més de ser una plataforma interactiva per a l'aprenentatge de l'estadística, inclou funcionalitats que permeten assegurar la integritat de les proves.</p>
+        </section>
+
+        <section class="container">
+            <h2>Avantatges per als Docents</h2>
+            <div class="features">
+                <div>
+                    <h3>Avaluació Aleatòria</h3>
+                    <p>Gràcies a la generació de valors aleatoris, els estudiants no poden copiar-se entre ells, ja que cada sessió és única. A més, poden repetir les activitats tantes vegades com vulguin amb valors diferents, assegurant-se que el seu aprenentatge sigui efectiu i sense repetició.</p>
+                </div>
+                <div>
+                    <h3>Control i Seguiment</h3>
+                    <p>Els docents poden sol·licitar un resum detallat de cada estudiant, amb informació com el seu nom, cognom, hora i data d'enviament, i la IP des de la qual s'ha realitzat l'activitat. Això ajuda a verificar la coherència dels treballs i identificar si algun alumne ha repetit l'activitat o ha fet els exercicis fora de termini.</p>
+                </div>
+                <div>
+                    <h3>Accés als Resums</h3>
+                    <p>Si tens un pla educatiu amb nosaltres, pots veure els resums complets de les activitats dels teus alumnes amb tots els detalls sobre els seus treballs. Simplement accedeix al següent botó per veure'ls.</p>
+                    <a href="decrypt.html" class="summary-button">Veure resums dels alumnes</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container randomness">
+            <h2>Aleatorietat per a una Avaluació Segura</h2>
+            <p>Una de les característiques més importants d'Estadísticapp per als docents és la seva capacitat per generar dades aleatòries en cada prova. Aquesta funcionalitat assegura que cada alumne obtingui una versió diferent de l'activitat, evitant que puguin copiar-se entre ells.</p>
+            <p>A més, els alumnes poden repetir l'activitat tantes vegades com desitgin, amb nous valors aleatoris en cada intent, cosa que els permet practicar fins a dominar el concepte.</p>
+            <canvas id="barChart"></canvas>
+            <div id="countdown" class="countdown">Actualitzant en: <span id="counter">3</span></div>
+            <p class="dynamic-text" id="dynamicText"></p>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const barLabels = ["Categoria A", "Categoria B", "Categoria C", "Categoria D", "Categoria E"];
+                    const studySubjects = ["adolescents", "treballadors d'una empresa", "esportistes", "pensionistes"];
+                    const studyTopics = ["els dispositius electrònics", "els llibres", "la contaminació", "la salut"];
+
+                    const generateRandomData = () => {
+                        return Array.from({ length: barLabels.length }, () => Math.floor(Math.random() * 50) + 10);
+                    };
+
+                    const generateDynamicText = () => {
+                        const subject = studySubjects[Math.floor(Math.random() * studySubjects.length)];
+                        const topic = studyTopics[Math.floor(Math.random() * studyTopics.length)];
+                        const sampleSize = Math.floor(Math.random() * 46) + 5;
+                        return `Estem fent un estudi a uns ${subject} sobre ${topic} i hem seleccionat com a mostra a un total de ${sampleSize} persones.`;
+                    };
+
+                    const createBarChart = (data) => {
+                        const ctx = document.getElementById("barChart").getContext("2d");
+                        return new Chart(ctx, {
+                            type: "bar",
+                            data: {
+                                labels: barLabels,
+                                datasets: [{
+                                    label: "Freqüències",
+                                    data,
+                                    backgroundColor: ["#4caf50", "#2196f3", "#ff9800", "#e91e63", "#9c27b0"],
+                                    borderRadius: 5,
+                                }],
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: { legend: { display: false } },
+                                scales: {
+                                    y: { beginAtZero: true },
+                                },
+                            },
+                        });
+                    };
+
+                    let chartData = generateRandomData();
+                    let barChart = createBarChart(chartData);
+                    const dynamicTextElement = document.getElementById("dynamicText");
+
+                    const updateChart = () => {
+                        chartData = generateRandomData();
+                        barChart.data.datasets[0].data = chartData;
+                        barChart.update();
+                        dynamicTextElement.textContent = generateDynamicText();
+                    };
+
+                    let countdown = 3;
+                    const counterElement = document.getElementById("counter");
+                    setInterval(() => {
+                        if (countdown === 0) {
+                            updateChart();
+                            countdown = 3;
+                        } else {
+                            countdown--;
+                        }
+                        counterElement.textContent = countdown;
+                    }, 1000);
+
+                    dynamicTextElement.textContent = generateDynamicText();
+                });
+            </script>
+        </section>
+
+        <section class="container footer-text">
+            <h3>Apren, Ensenya i Consolida!</h3>
+        </section>
+    </main>
+
+    <footer>
+        <p>©2024 WorkSphere</p>
+    </footer>
+</body>
+</html>

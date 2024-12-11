@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preus - Estadísticapp</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fffbe7;
+            color: #333;
+        }
+
+        header {
+            background: #ffcad4;
+            padding: 10px 0;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 15px;
+        }
+
+        header nav ul li {
+            margin: 0;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .botonPrincipal {
+            background: #ff85a1;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .botonPrincipal:hover {
+            background: #ff5773;
+        }
+
+        header nav ul li a:hover {
+            background: #ff5773;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            color: #333;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        /* Estilos para la sección de Precios */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .plan {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .plan img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .plan h3 {
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .plan p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .plan .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ff5773;
+        }
+
+        .plan .details {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .plan .cta {
+            background-color: #ff85a1;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        .plan .cta:hover {
+            background-color: #ff5773;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="about.html">Sobre Estadísticapp</a></li>
+                <li><a href="education.html">Per a Docents</a></li>
+                <li><a href="#">Preus</a></li>
+                <li><a href="log-in.html">WorkSphere Pro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Plans i Preus</h1>
+        <p>Escull el pla que millor s'adapti a les teves necessitats i comença a utilitzar Estadísticapp!</p>
+
+        <div class="pricing-container">
+            <!-- Plan Free -->
+            <div class="plan">
+                <img src="https://i.ibb.co/Yt4xJCY/free.png" alt="Pla Free">
+                <h3>Free</h3>
+                <p>Prova Estadísticapp amb el pla gratuït i accedeix a 3 sessions il·limitades.</p>
+                <p class="price">Gratuït</p>
+                <p class="details">Inclou 3 sessions il·limitades (es poden repetir tantes vegades com vulguis). No inclou altres funcionalitats.</p>
+                <a href="index.html" class="cta">Selecciona aquest pla</a>
+            </div>
+
+            <!-- Plan Education -->
+            <div class="plan">
+                <img src="https://i.ibb.co/Q9b6gH6/edu.png" alt="Pla Education">
+                <h3>Education</h3>
+                <p>Gratuït per estudiants i/o docents amb correus educacionals.</p>
+                <p class="price">Gratuït</p>
+                <p class="details">Inclou accés a totes les sessions de Estadísticapp (il·limitades) i 1 activitat il·limitada. Disponible per a estudiants i docents amb correu educacional (@xtec.cat, @edu.gva.es).</p>
+                <a href="index.html" class="cta">Selecciona aquest pla</a>
+            </div>
+
+            <!-- Plan Pro -->
+            <div class="plan">
+                <img src="https://i.ibb.co/5kV1qrY/pro.png" alt="Pla Pro">
+                <h3>Pro</h3>
+                <p>Accedeix a totes les funcionalitats de Estadísticapp amb una subscripció Premium.</p>
+                <p class="price">4,99€</p>
+                <p class="details">Inclou accés a totes les sessions i activitats de Estadísticapp. També inclou una compte WorkSphere. Disponible també amb la subscripció anual a WorkSphere (9.99€ / any).</p>
+                <a href="#" class="cta">Contacta amb Nosaltres</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>©2024 WorkSphere</p>
+    </footer>
+</body>
+</html>

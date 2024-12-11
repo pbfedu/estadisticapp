@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Estadísticapp</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+        .randomness {
+            text-align: center;
+        }
+        #barChart {
+            max-width: 700px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="#">Sobre Estadísticapp</a></li>
+                <li><a href="education.html">Per a Docents</a></li>
+                <li><a href="pricing.html">Preus</a></li>
+                <li><a href="log-in.html">WorkSphere Pro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about">
+        <section class="container">
+            <h1>Què és Estadísticapp?</h1>
+            <p>Estadísticapp és una eina interactiva dissenyada per ajudar a comprendre i practicar conceptes d'estadística de manera senzilla, visual i pràctica. Està pensada per a estudiants, docents i qualsevol persona que vulgui aprendre o reforçar els seus coneixements en aquesta matèria.</p>
+        </section>
+
+        <section class="container">
+            <h2>Per a què serveix?</h2>
+            <div class="features">
+                <div>
+                    <h3>Aprenentatge Senzill</h3>
+                    <p>Entendre conceptes bàsics d'estadística.</p>
+                </div>
+                <div>
+                    <h3>Exemples Interactius</h3>
+                    <p>Practicar amb exemples visuals i interactius.</p>
+                </div>
+                <div>
+                    <h3>Visualització</h3>
+                    <p>Visualitzar gràfics, taules de freqüències i conceptes estadístics.</p>
+                </div>
+                <div>
+                    <h3>Consolidació</h3>
+                    <p>Consolidar coneixements mitjançant exercicis dinàmics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container randomness">
+            <h2>Aleatorietat a Estadísticapp</h2>
+            <p>Un dels aspectes més interessants d'Estadísticapp és la seva capacitat d'oferir valors aleatoris cada vegada que treballes amb ella. Això permet que cada experiència sigui única i que puguis practicar amb una gran varietat de dades. Mira aquest exemple:</p>
+            <canvas id="barChart"></canvas>
+            <div id="countdown" class="countdown">Actualitzant en: <span id="counter">3</span></div>
+            <p class="dynamic-text" id="dynamicText"></p>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const barLabels = ["Categoria A", "Categoria B", "Categoria C", "Categoria D", "Categoria E"];
+                    const studySubjects = ["adolescents", "treballadors d'una empresa", "esportistes", "pensionistes"];
+                    const studyTopics = ["els dispositius electrònics", "els llibres", "la contaminació", "la salut"];
+
+                    const generateRandomData = () => {
+                        return Array.from({ length: barLabels.length }, () => Math.floor(Math.random() * 50) + 10);
+                    };
+
+                    const generateDynamicText = () => {
+                        const subject = studySubjects[Math.floor(Math.random() * studySubjects.length)];
+                        const topic = studyTopics[Math.floor(Math.random() * studyTopics.length)];
+                        const sampleSize = Math.floor(Math.random() * 46) + 5;
+                        return `Estem fent un estudi a uns ${subject} sobre ${topic} i hem seleccionat com a mostra a un total de ${sampleSize} persones.`;
+                    };
+
+                    const createBarChart = (data) => {
+                        const ctx = document.getElementById("barChart").getContext("2d");
+                        return new Chart(ctx, {
+                            type: "bar",
+                            data: {
+                                labels: barLabels,
+                                datasets: [{
+                                    label: "Freqüències",
+                                    data,
+                                    backgroundColor: ["#4caf50", "#2196f3", "#ff9800", "#e91e63", "#9c27b0"],
+                                    borderRadius: 5,
+                                }],
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: { legend: { display: false } },
+                                scales: {
+                                    y: { beginAtZero: true },
+                                },
+                            },
+                        });
+                    };
+
+                    let chartData = generateRandomData();
+                    let barChart = createBarChart(chartData);
+                    const dynamicTextElement = document.getElementById("dynamicText");
+
+                    const updateChart = () => {
+                        chartData = generateRandomData();
+                        barChart.data.datasets[0].data = chartData;
+                        barChart.update();
+                        dynamicTextElement.textContent = generateDynamicText();
+                    };
+
+                    let countdown = 3;
+                    const counterElement = document.getElementById("counter");
+                    setInterval(() => {
+                        if (countdown === 0) {
+                            updateChart();
+                            countdown = 3;
+                        } else {
+                            countdown--;
+                        }
+                        counterElement.textContent = countdown;
+                    }, 1000);
+
+                    dynamicTextElement.textContent = generateDynamicText();
+                });
+            </script>
+        </section>
+
+        <section class="container footer-text">
+            <h3>Mai no pararàs d'aprendre!</h3>
+        </section>
+    </main>
+
+    <footer>
+        <p>©2024 WorkSphere</p>
+    </footer>
+</body>
+</html>
