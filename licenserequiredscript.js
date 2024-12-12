@@ -16,7 +16,7 @@ document.getElementById('validate-license').addEventListener('click', () => {
   
     if (emailPattern.test(email)) {
       document.cookie = "access_granted_partial=true; path=/; max-age=2592000"; // Cookie para 1 mes
-      window.location.href = "https://pbfedu.github.io/estadisticapp/theory/4/";
+      window.location.href = "https://pbfedu.github.io/estadisticapp/theory/4";
     } else {
       showError("El correu no pertany a un domini educatiu autoritzat, si es tracta d'un error contacta amb nosaltres.");
     }
