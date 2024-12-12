@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         vista = 'muestra';
         textoExplicacion.innerHTML = `
           La <strong>Mostra</strong> és un subgrup representatiu de la població. 
-          Per exemple, 20 estudiants seleccionats a l'atzar de l'escola
+          Per exemple, 20 estudiants seleccionats d'una escola
         `;
         cambiarVistaBtn.textContent = 'Població';
         
