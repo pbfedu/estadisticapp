@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
       boton.textContent = "Següent";
       boton.classList.add('boton-continuar');
       boton.addEventListener('click', () => {
-        window.location.href = '5.html';
+        window.location.href = 'https://pbfedu.github.io/estadisticapp/theory/5';
       });
   
       mainContainer.appendChild(boton);
