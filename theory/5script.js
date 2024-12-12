@@ -201,11 +201,11 @@ document.addEventListener('DOMContentLoaded', () => {
       boton.textContent = "Següent";
       boton.classList.add('boton-continuar');
       boton.addEventListener('click', () => {
-        window.location.href = '6.html';
+        window.location.href = 'https://pbfedu.github.io/estadisticapp/theory/6';
       });
       document.querySelector('.container').appendChild(boton);
       boton.style.display = 'block';
-    }
+    }f
   });
       // Función para mostrar la información extendida
 function mostrarInfo() {
