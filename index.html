@@ -1,33 +1,127 @@
 <!DOCTYPE html>
-<!-- Bidvertiser2097518 -->
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benvingut a Estadísticapp!</title>
+    <title>Preguntes d'Estadística</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para el banner de anuncio tipo Google Ads */
+        .popup {
+            display: none; /* Inicialmente está oculto */
+            position: fixed;
+            bottom: 0; /* Lo colocamos en la parte inferior */
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Sombra hacia arriba */
+            padding: 10px;
+            text-align: center;
+            font-size: 1rem;
+            z-index: 1000;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            border-top: 1px solid #ddd;
+        }
+
+        .popup p {
+            margin: 0;
+            padding: 5px;
+            color: #555;
+        }
+
+        .popup a {
+            text-decoration: none;
+            color: #ff5773;
+            font-weight: bold;
+        }
+
+        .popup button {
+            background: transparent;
+            border: none;
+            color: #ff5773;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo de la "x" de cierre */
+        .popup-close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .popup-close:hover {
+            color: #ff5773;
+        }
+
+        /* Estilo responsivo para móviles */
+        @media (max-width: 600px) {
+            .popup {
+                font-size: 0.9rem;
+                padding: 15px;
+            }
+
+            .popup button {
+                font-size: 0.9rem;
+            }
+
+            .popup-close {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="#">Inici</a></li>
-                <li><a href="about.html">Sobre Estadíssticapp</a></li>
-                <li><a href="education.html">Per a Docents</a></li>
-                <li><a href="pricing.html">Preus</a></li>
-                <li><a href="log-in.html">WorkSphere Pro</a></li>
+                <li><a href="https://pbfedu.github.io/estadisticapp/about">Sobre Estadíssticapp</a></li>
+                <li><a href="https://pbfedu.github.io/estadisticapp/education">Per a Docents</a></li>
+                <li><a href="https://pbfedu.github.io/estadisticapp/pricing">Preus</a></li>
+                <li><a href="https://pbfedu.github.io/estadisticapp/log-in">WorkSphere Pro</a></li>
             </ul>
         </nav>
     </header>
-<body>
 
-  <main class="inicio">
-    <h1>Benvingut/da a Estadísticapp</h1>
-    <p>Descobreix i consolida conceptes de manera visual, interactiva i senzilla</p>
-    <button id="next" class="botonPrincipal" onclick="window.location.href='https://pbfedu.github.io/estadisticapp/theory/1';">Començar</button>
-</main>
-  <footer>
-    <p>©2024 WorkSphere</p>
-  </footer>
+    <main class="inicio">
+        <h1>Benvingut/da a Estadísticapp</h1>
+        <p>Descobreix i consolida conceptes de manera visual, interactiva i senzilla</p>
+        <button id="next" class="botonPrincipal" onclick="window.location.href='theory/1.html';">Començar</button>
+    </main>
+
+    <footer>
+        <p>©2024 WorkSphere</p>
+    </footer>
+
+    <!-- Popup (estilo Google Ads) -->
+    <div id="popup" class="popup">
+        <span id="close-popup" class="popup-close">&times;</span>
+        <p>Treu tot el profit a Estadísticapp i elimina els anuncis, <a href="https://pbfedu.github.io/estadisticapp/pricing">actualitzant a la nostra versió pro</a>.  Gràcies per donar-nos suport!</p>
+        <button onclick="window.location.href='https://pbfedu.github.io/estadisticapp/pricing';">Actualitza ara</button>
+    </div>
+
+    <script>
+        // Mostrar el popup después de 1 segundo
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('popup').style.display = 'block'; // Muestra el popup
+            }, 1000); // Se muestra después de 1 segundo
+        }
+
+        // Cerrar el popup cuando se hace clic en la "x"
+        document.getElementById('close-popup').onclick = function() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
