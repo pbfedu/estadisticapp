@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novetats - Estadísticapp</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #ff375b;
+      margin-bottom: 20px;
+    }
+
+    .promo-container {
+      width: 80%;
+      max-width: 900px;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      background-color: #ffffff;
+      margin-bottom: 30px;
+    }
+
+    .novetats-list {
+      display: flex;
+      flex-direction: column;
+      gap: 50px; /* espai */
+      margin-bottom: 30px;
+    }
+
+    .novetat-item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      background-color: #fff0f3;
+      position: relative;
+    }
+
+    .novetat-item i {
+      font-size: 2.2rem;
+      margin-right: 15px;
+      color: #ff375b;
+    }
+
+    .novetat-item .text {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .novetat {
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 5px 15px;
+      text-transform: uppercase;
+      position: absolute;
+      top: -20px;
+      left: 15px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .novetat span {
+      background-image: linear-gradient(45deg, rgba(255, 55, 91, 1), rgba(255, 100, 150, 0.6), rgba(255, 155, 0, 1));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400% 400%;
+      animation: gradientAnimation 4s ease infinite;
+      display: inline-block;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .pro-message {
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #333;
+      background-color: #ffcad4;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .pro-message a {
+      color: #ff375b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .counter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff375b;
+      margin-bottom: 10px;
+    }
+
+    .skip-button {
+      background-color: #ff375b;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 20px;
+      display: none; /* Ocult */
+      transition: background-color 0.3s;
+    }
+
+    .skip-button:hover {
+      background-color: #ff6083;
+    }
+
+    .skip-button a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Novetats a Estadísticapp!</h1>
+
+  <div class="promo-container">
+    <div class="pro-message">
+      <p>Si ets usuari Pro, ja tens accés a totes les novetats! Si no ho ets actualitza ara per obtenir les novetats.</p>
+      <a href="#">Actualitza ara</a>
+    </div>
+
+    <div class="novetats-list">
+      <div class="novetat-item">
+        <div class="novetat"><span>NOVETAT</span></div>
+        <i class="fas fa-chart-bar"></i>
+        <div class="text">
+          <h3>Quartils i Rangs</h3>
+          <p>Descobreix el nou mòdul de quartils i rangs a Estadísticapp. Disponible el 21/1 per als usuaris Free i Edu</p>
+        </div>
+      </div>
+
+      <div class="novetat-item">
+        <div class="novetat"><span>NOVETAT</span></div>
+        <i class="fas fa-table"></i>
+        <div class="text">
+          <h3>Taules de Contingència</h3>
+          <p>Explora les taules de contingència. Inclou Exercicis i Fitxes per a Usuaris Pro. Mòdul disponible el 21/1 per als usuaris Free i Edu</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="counter" id="counter">7</div>
+  <button class="skip-button" id="skipButton">
+    <a href="https://pbfedu.github.io/estadisticapp/theory/7">Saltar Anunci</a>
+  </button>
+
+  <script>
+    let counterElement = document.getElementById('counter');
+    let skipButton = document.getElementById('skipButton');
+
+    let counter = 7; // Temps
+
+    let interval = setInterval(() => {
+      counter--;
+      counterElement.textContent = counter;
+
+      if (counter === 0) {
+        clearInterval(interval);
+        mostrarBoton();
+      }
+    }, 1000);
+
+    function mostrarBoton() {
+      counterElement.style.display = 'none';
+      skipButton.style.display = 'block'; // mostra boto
+    }
+  </script>
+</body>
+</html>
